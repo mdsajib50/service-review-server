@@ -70,7 +70,7 @@ async function run() {
             const id = req.params.id;
             const query = {_id: ObjectId(id)};
             const result = await reviewCollection.deleteOne(query);
-            console.log(result)
+            console.log(message)
             res.send(result)
          })
 
