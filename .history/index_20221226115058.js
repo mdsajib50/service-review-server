@@ -41,9 +41,9 @@ async function run() {
             res.send(service)
           })
         //   reviews api
-        app.post('/reviews', async(req, res)=>{
-            const review = req.body;
-            const result = await reviewCollection.insertOne(review);
+        app.post('/orders', async(req, res)=>{
+            const order = req.body;
+            const result = await orderCollection.insertOne(order);
             res.send(result)
          })
 
