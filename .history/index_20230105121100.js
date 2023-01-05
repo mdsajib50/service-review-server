@@ -17,13 +17,13 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 function verifyJwt(req, res, next) {
   const authHeader = req.headers.authorization;
- 
+  console.log('auth',authHeader)
   if (!authHeader) {
     return res.status(401).send({message: 'unauthorized access!'})
   }
 
 const token = authHeader.split(' ')[1]
-
+console.log('message', token)
 jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, function(err, decoded) {
   if (err) {
     return res.status(401).send({message: 'unauthorized access!!'})
